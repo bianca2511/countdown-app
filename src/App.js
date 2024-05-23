@@ -29,17 +29,17 @@ function App() {
   }, [timeLeft]);
 
   const timerComponents = [];
-  Object.keys(timeLeft).forEach((interval) => {
-    if (!timeLeft[interval]) {
-      return;
-    }
+  for (let interval of Object.keys(timeLeft)) {
+    // if (!timeLeft[interval]) {
+    //   continue;
+    // }
 
     timerComponents.push(
       <span key={interval} className="timer">
         {timeLeft[interval]} <span className="label">{interval}</span>
       </span>
     );
-  });
+  }
 
   return (
     <div className="timer-container">

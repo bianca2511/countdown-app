@@ -3,10 +3,9 @@ import './App.css';  // Import the CSS file
 
 const calculateTimeLeft = () => {
   const difference = +new Date(`07/05/2026`) - +new Date();
-  let timeLeft = {};
 
   if (difference > 0) {
-    timeLeft = {
+    return {
       days: Math.floor(difference / (1000 * 60 * 60 * 24)),
       hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
       minutes: Math.floor((difference / 1000 / 60) % 60),
@@ -14,7 +13,7 @@ const calculateTimeLeft = () => {
     };
   }
 
-  return timeLeft;
+  return {};
 };
 
 function App() {
